@@ -1,0 +1,72 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>{% block title %}Mail{% endblock %}</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="stylesheet" href="{% static 'mail/styles.css' %}">
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f8f9fa;
+                margin: 0;
+                padding: 20px;
+            }
+    
+            .email-container {
+                display: flex;
+                column-gap: 10px;
+                background-color: #ffffff;
+                margin-bottom: 10px;
+                padding: 10px;
+                align-items: center;
+                border: 1px solid #ddd;
+                border-radius: 5px;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            }
+    
+    
+            .sender {
+                flex: 0 0 200px;
+                font-weight: bold;
+                color: black;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+    
+            .email-content {
+                flex: 1;
+                display: flex;
+                column-gap: 15px;
+                justify-content: space-between;
+                overflow: hidden;
+            }
+    
+            .email-subject {
+                font-weight: 500;
+                color: #333;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+    
+    
+            .email-time {
+                flex: 0 0 200px;
+                text-align: right;
+                color: #999;
+                font-size: 0.9em;
+            }
+        </style>
+        {% block script %}
+        {% endblock %}
+    </head>
+    <body>
+        <div class="container">
+            {% block body %}
+            {% endblock %}
+        </div>
+    </body>
+</html>
